@@ -2,9 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class LoginPageEmail extends StatelessWidget {
+class LoginPagePw extends StatelessWidget {
   final _controller = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,19 +35,19 @@ class LoginPageEmail extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Qual o seu e-mail?",
+                            "Qual a sua senha?",
                             style: TextStyle(fontSize: 18),
                           ),
                           SizedBox(height: 16),
                           TextField(
                             controller: _controller,
-                            keyboardType: TextInputType.emailAddress,
+                            obscureText: true,
                             decoration: InputDecoration(
                               suffixIcon: IconButton(
                                 onPressed: _controller.clear,
                                 icon: Icon(Icons.clear),
                               ),
-                              labelText: "E-mail",
+                              labelText: "Senha",
                               floatingLabelBehavior: FloatingLabelBehavior.auto,
                               border: OutlineInputBorder(),
                               hintText: 'Enter your email',
@@ -64,7 +63,7 @@ class LoginPageEmail extends StatelessWidget {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, '/login-pw');
+                            // Handle login
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(vertical: 16),
@@ -74,7 +73,7 @@ class LoginPageEmail extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            "Continuar",
+                            "Entrar",
                             style: TextStyle(fontSize: 19, color: Colors.white),
                           ),
                         ),

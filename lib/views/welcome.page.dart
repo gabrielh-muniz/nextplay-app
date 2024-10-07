@@ -52,7 +52,7 @@ class WelcomePage extends StatelessWidget {
                         Expanded(
                           child: ElevatedButton(
                             onPressed: () {
-                              // Action for button 1
+                              Navigator.pushNamed(context, '/login-email');
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Color(0xff6247AA),
