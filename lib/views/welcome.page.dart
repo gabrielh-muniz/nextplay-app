@@ -69,7 +69,7 @@ class WelcomePage extends StatelessWidget {
                         Expanded(
                           child: ElevatedButton(
                             onPressed: () {
-                              // Action for button 2
+                              Navigator.pushNamed(context, '/user-type');
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Color(0xffE6E4FC),

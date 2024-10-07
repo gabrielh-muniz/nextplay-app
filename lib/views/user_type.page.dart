@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 
-class LoginPagePw extends StatelessWidget {
-  final _controller = TextEditingController();
+const List<String> list = <String>['Jogador', 'Clube'];
+
+class UserType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,24 +36,11 @@ class LoginPagePw extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Qual a sua senha?",
+                            "Escolha o tipo de usuario:",
                             style: TextStyle(fontSize: 18),
                           ),
                           SizedBox(height: 16),
-                          TextField(
-                            controller: _controller,
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              suffixIcon: IconButton(
-                                onPressed: _controller.clear,
-                                icon: Icon(Icons.clear),
-                              ),
-                              labelText: "Senha",
-                              floatingLabelBehavior: FloatingLabelBehavior.auto,
-                              border: OutlineInputBorder(),
-                              hintText: 'Senha',
-                            ),
-                          ),
+                          DropdownUserType(),
                         ],
                       ),
                     ),
@@ -63,7 +51,7 @@ class LoginPagePw extends StatelessWidget {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                            // Handle login
+                            Navigator.pushNamed(context, '/login-pw');
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(vertical: 16),
@@ -73,7 +61,7 @@ class LoginPagePw extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            "Entrar",
+                            "Continuar",
                             style: TextStyle(fontSize: 19, color: Colors.white),
                           ),
                         ),
@@ -89,3 +77,40 @@ class LoginPagePw extends StatelessWidget {
     );
   }
 }
+
+class DropdownUserType extends StatefulWidget {
+  @override
+  _DropdownUserTypeState createState() => _DropdownUserTypeState();
+}
+
+class _DropdownUserTypeState extends State<DropdownUserType> {
+  String? selectedValue;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity, // Makes the dropdown full-width
+      child: DropdownButtonFormField<String>(
+        value: selectedValue,
+        onChanged: (String? newValue) {
+          setState(() {
+            selectedValue = newValue!;
+          });
+        },
+        items: <String>['Jogador', 'Clube']
+            .map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+        decoration: InputDecoration(
+          border: OutlineInputBorder(), // Add a border around it
+          labelText: 'Tipo',
+          hintText: 'Escolha uma opcao',
+        ),
+      ),
+    );
+  }
+}
+
