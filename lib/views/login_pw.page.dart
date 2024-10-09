@@ -52,51 +52,55 @@ class LoginPagePw extends StatelessWidget {
                               ),
                               onTap: () {
                                 showModalBottomSheet(
-                                    context: context,
-                                    builder: (context) => Container(
-                                          padding: EdgeInsets.all(20),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Container(
-                                                padding:
-                                                    EdgeInsets.only(top: 16),
-                                                child: Text(
-                                                  "Selecione uma opcao!",
-                                                  style: TextStyle(
-                                                    fontSize: 24,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                              ),
-                                              Text(
-                                                "Voce pode recuperar a senha por e-mail ou pelo numero do seu celular",
-                                                style: TextStyle(
-                                                  fontSize: 16,
-                                                  color: Colors.grey,
-                                                ),
-                                              ),
-                                              SizedBox(height: 30),
-                                              ForgotPasswordGesture(
-                                                showcaseIcon:
-                                                    Icons.mail_outline_rounded,
-                                                title: "E-mail",
-                                                subtitle: "Recupere via e-mail",
-                                                onTap: () {},
-                                              ),
-                                              SizedBox(height: 20),
-                                              ForgotPasswordGesture(
-                                                showcaseIcon: Icons
-                                                    .mobile_friendly_rounded,
-                                                title: "Telefone",
-                                                subtitle:
-                                                    "Recupere via numero de celular",
-                                                onTap: () {},
-                                              ),
-                                            ],
+                                  context: context,
+                                  builder: (context) => Container(
+                                    padding: EdgeInsets.all(20),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.only(top: 16),
+                                          child: Text(
+                                            "Selecione uma opcao!",
+                                            style: TextStyle(
+                                              fontSize: 24,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                           ),
-                                        ));
+                                        ),
+                                        Text(
+                                          "Voce pode recuperar a senha por e-mail ou pelo numero do seu celular",
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                        SizedBox(height: 30),
+                                        ForgotPasswordGesture(
+                                          showcaseIcon:
+                                              Icons.mail_outline_rounded,
+                                          title: "E-mail",
+                                          subtitle: "Recupere via e-mail",
+                                          onTap: () {
+                                            Navigator.pop(context);
+                                            Navigator.pushNamed(
+                                                context, '/forget-pw-email');
+                                          },
+                                        ),
+                                        SizedBox(height: 20),
+                                        ForgotPasswordGesture(
+                                          showcaseIcon:
+                                              Icons.mobile_friendly_rounded,
+                                          title: "Telefone",
+                                          subtitle:
+                                              "Recupere via numero de celular",
+                                          onTap: () {},
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
                               },
                             ),
                           ),
@@ -153,7 +157,7 @@ class ForgotPasswordGesture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(

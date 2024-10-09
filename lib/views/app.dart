@@ -4,6 +4,7 @@ import 'package:nextplay/views/register.page.dart';
 import './login_email.page.dart';
 import './welcome.page.dart';
 import './user_type.page.dart';
+import './forgetpw_email.page.dart';
 
 class NextPlayApp extends StatelessWidget {
   const NextPlayApp({super.key});
@@ -18,6 +19,7 @@ class NextPlayApp extends StatelessWidget {
         '/login-pw': (context) => LoginPagePw(),
         '/user-type': (context) => UserType(),
         '/register': (context) => RegisterPage(),
+        '/forget-pw-email': (context) => ForgetPasswordEmailPage(),
       },
     );
   }
