@@ -11,7 +11,7 @@ class NextPlayApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/register',
+      initialRoute: '/welcome',
       routes: {
         '/welcome': (context) => WelcomePage(),
         '/login-email': (context) => LoginPageEmail(),

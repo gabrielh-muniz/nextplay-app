@@ -43,6 +43,7 @@ class LoginPageEmail extends StatelessWidget {
                           TextField(
                             controller: _controller,
                             keyboardType: TextInputType.emailAddress,
+                            autofocus: true,
                             decoration: InputDecoration(
                               suffixIcon: IconButton(
                                 onPressed: _controller.clear,
