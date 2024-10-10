@@ -38,7 +38,7 @@ class WelcomePage extends StatelessWidget {
                   children: [
                     // Catch message
                     Text(
-                      "Realize seu sonho no esporte, \ncomece agora!",
+                      "Realize seu sonho no \nesporte, comece agora!",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 23,

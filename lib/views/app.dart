@@ -12,6 +12,9 @@ class NextPlayApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+      ),
       initialRoute: '/welcome',
       routes: {
         '/welcome': (context) => WelcomePage(),

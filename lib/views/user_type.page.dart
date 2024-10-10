@@ -51,7 +51,7 @@ class UserType extends StatelessWidget {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, '/login-pw');
+                            Navigator.pushNamed(context, '/register');
                           },
                           style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(vertical: 16),
@@ -113,4 +113,3 @@ class _DropdownUserTypeState extends State<DropdownUserType> {
     );
   }
 }
-
